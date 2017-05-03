@@ -2,7 +2,6 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-<<<<<<< HEAD
     = javascript_include_tag 'application'
     = csrf_meta_tag
   %body
@@ -14,11 +13,9 @@
     #flash
       - flash.each do |key, value|
         %div{:id => "flash_#{key}"}= h value
-=======
     %title OpenTodoApi
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
->>>>>>> generate-haml
     = yield
