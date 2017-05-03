@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-  belongs_to :list
-  belongs_to :item
+  has_many :lists
+  has_many :items, through: :list
 end
