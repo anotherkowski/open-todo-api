@@ -31,6 +31,7 @@ gem 'haml'
 # Convert all ERB to HAML > rake haml:erb2haml
 gem 'haml-rails', '~> 0.9'
 gem 'clearance'
+gem 'html2haml'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

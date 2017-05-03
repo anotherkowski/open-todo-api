@@ -232,6 +232,7 @@ DEPENDENCIES
   faker
   haml
   haml-rails (~> 0.9)
+  html2haml
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
