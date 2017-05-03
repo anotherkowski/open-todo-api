@@ -1,4 +1,4 @@
 class User < ApplicationRecord
-  has_many :lists
-  has_many :items, through: :list
+  has_many :lists, dependent: :destroy
+  has_many :items, dependent: :destroy
 end
