@@ -22,3 +22,4 @@
 
 # Ignore personal notes
 git-instructions.md
+.bash_profile
