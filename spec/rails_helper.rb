@@ -6,7 +6,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 require 'clearance/rspec'
-
+require 'support/factory_girl'
 require 'shoulda/matchers'
 
 Shoulda::Matchers.configure do |config|

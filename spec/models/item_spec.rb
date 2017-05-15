@@ -12,11 +12,10 @@ RSpec.describe Item, type: :model do
   it { should validate_presence_of(:list_id)}
   # Shoulda tests for active record associations / nested resources
   it { should belong_to(:list) }
-  it { should belong_to(:user) }
 
   describe 'attributes' do
      it 'should have title attribute' do
-       expect(list).to have_attributes(title: 'Sample list', user_id: user.id)
+       expect(list).to have_attributes(title: 'Sample list', list_id: list.id)
      end
    end
    describe 'invalid list' do
