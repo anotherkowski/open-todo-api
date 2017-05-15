@@ -7,7 +7,10 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'clearance/rspec'
 require 'support/factory_girl'
+require 'factory_girl_rails'
 require 'shoulda/matchers'
+
+# Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
