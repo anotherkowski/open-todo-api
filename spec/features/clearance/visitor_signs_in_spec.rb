@@ -3,8 +3,8 @@ require "support/features/clearance_helpers"
 
 RSpec.feature "Visitor signs in" do
   scenario "with valid email and password" do
-    create_user "user@example.com", "password"
-    sign_in_with "user@example.com", "password"
+    create_user "user@example.com", "password123"
+    sign_in_with "user@example.com", "password123"
 
     expect_user_to_be_signed_in
   end
