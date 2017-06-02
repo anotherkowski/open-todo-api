@@ -1,8 +1,6 @@
 class User < ApplicationRecord
   include Clearance::User
   before_validation :downcase_email
-
-
   has_many :lists, dependent: :destroy
   # ActiveRecord Validations
   validates_associated :lists
