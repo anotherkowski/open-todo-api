@@ -31,7 +31,6 @@ gem 'haml'
 # Convert all ERB to HAML > rake haml:erb2haml
 gem 'haml-rails', '~> 0.9'
 gem 'clearance'
-gem 'clearance_http_auth'
 gem 'html2haml'
 gem 'active_model_serializers', '~> 0.10.0'
 
