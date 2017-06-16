@@ -1,9 +1,9 @@
 require 'faker'
 # Create myself
 User.create!(
-  name: 'annhnova',
-  email: 'annhnova@gmail.com',
-  password: 'annlovesmax'
+  name: 'example',
+  email: 'example@example.com',
+  password: 'password'
 )
 # Create users
 25.times do

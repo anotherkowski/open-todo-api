@@ -54,7 +54,6 @@ end
 
 group :test do
   gem 'capybara', '>= 2.4.0'
-  gem 'nyan-cat-formatter'
   gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
   # Mailcatcher gem IS installed, but does NOT appear in Gemfile due to potential conflicts
   # Go to http://127.0.0.1:1080/
