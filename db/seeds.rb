@@ -29,7 +29,7 @@ lists = List.all
 100.times do
   item = Item.create!(
   title: Faker::Hacker.say_something_smart,
-  user_id: users.sample.id,
+  # user_id: users.sample.id,
   list_id: lists.sample.id
   )
   item.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
@@ -38,3 +38,4 @@ end
 puts "Seed finished"
 puts "#{User.count} users created"
 puts "#{Item.count} items created"
+puts "#{List.count} lists created"

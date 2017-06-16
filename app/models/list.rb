@@ -3,7 +3,7 @@ class List < ApplicationRecord
   has_many :items, dependent: :destroy
 
   # ActiveRecord Validations
-  validates_associated :items
-  validates_associated :user
+  # validates_associated :items
+  # validates_associated :user
 
 end
