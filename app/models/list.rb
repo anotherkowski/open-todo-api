@@ -5,14 +5,8 @@ class List < ApplicationRecord
   # ActiveRecord Validations
   validates_associated :items
   validates_associated :user
+  validates :title, :user_id, presence: true
+  validates :title, length: { minimum: 3 }, allow_blank: false
+  validates :title, uniqueness: true
 
-  # Automatically create faux list items upon new user sign-up
-  # after_create :create_list_items
-  #
-  # def create_list_items
-  #   items = ['item1', 'item2', 'item3', 'item4']
-  #   items.each do |item|
-  #     Item.create(title: item, list_id: self.id)
-  #   end
-  # end
 end

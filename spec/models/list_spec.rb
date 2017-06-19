@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe List, type: :model do
   let(:user) { User.create!(name: 'Sample User', email: 'user@example.com', password: 'password') }
-  let(:list) { List.create!(title: 'Sample list', user_id: user) }
+  let(:list) { List.create!(title: 'Sample list', user_id: user.id) }
 
   ## Shoulda tests for title
   it { should validate_uniqueness_of(:title) }
