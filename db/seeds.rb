@@ -1,8 +1,8 @@
 require 'faker'
 # Create myself
 User.create!(
-  name: 'user',
-  email: 'user@example.com',
+  name: 'example',
+  email: 'example@example.com',
   password: 'password'
 )
 # Create users
@@ -13,26 +13,24 @@ User.create!(
   password: Faker::Internet.password
   )
 end
-users = User.all
 
 # Create lists
 25.times do
-  list = List.create!(
+  List.create!(
   title: Faker::Hacker.noun,
-  user_id: users.sample.id,
+  user_id: User.all.sample.id,
+  public: false,
+  created_at: rand(10.minutes .. 1.year).ago
   )
-  list.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
 end
-lists = List.all
 
 # Create todos
 100.times do
-  item = Item.create!(
+  Item.create!(
   title: Faker::Hacker.say_something_smart,
-  # user_id: users.sample.id,
-  list_id: lists.sample.id
+  list_id: List.all.sample.id,
+  created_at: rand(10.minutes .. 1.year).ago
   )
-  item.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
 end
 
 puts "Seed finished"
