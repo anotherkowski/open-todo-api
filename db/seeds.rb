@@ -2,7 +2,7 @@ require 'faker'
 # Create myself
 User.create!(
   name: 'example',
-  email: 'example@example.com',
+  email: 'email@example.com',
   password: 'password'
 )
 # Create users
