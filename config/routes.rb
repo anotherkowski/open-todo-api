@@ -18,6 +18,6 @@ Rails.application.routes.draw do
     resources :lists, only: [] do
       resources :items, only: [:create]
     end
-    resources :item, only: [:destroy]
+    resources :items, only: [:destroy, :update]
   end
 end
