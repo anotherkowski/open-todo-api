@@ -1,5 +1,5 @@
 require 'faker'
-# Create myself
+# # Create myself
 User.create!(
   name: 'example',
   email: 'example@example.com',
@@ -16,12 +16,14 @@ end
 
 # Create lists
 25.times do
+  id = 1
   List.create!(
   title: Faker::Hacker.noun,
-  user_id: User.all.sample.id,
+  user_id: id,
   public: false,
   created_at: rand(10.minutes .. 1.year).ago
   )
+  id +=1
 end
 
 # Create todos

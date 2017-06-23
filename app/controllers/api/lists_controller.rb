@@ -23,7 +23,7 @@ class Api::ListsController < ApiController
 
   def update
     list = List.find(params[:id])
-    if list.update(list_params)
+    if list.update(list_params) && (list.public == true)
       render json: list
     else
       render json: { errors: list.errors.full_messages }, status: :unprocessable_entity
@@ -37,6 +37,5 @@ class Api::ListsController < ApiController
   def list_params
     params.require(:list).permit(
     :title, :public)
-    validates :public, inclusion: [true]
   end
 end
