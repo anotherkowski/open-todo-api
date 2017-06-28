@@ -1,0 +1,61 @@
+[alias]
+branches = branch -a
+stashes = stash list
+publish = "!git push -u origin $(git branch-name)"
+
+### add ###
+# add all
+aa = add --all
+# add by patch - looks at each change, and asks if we want to put it in the repo.
+ap = add --patch
+
+### commit ###
+# commit - amend the tip of the current branch rather than creating a new commit.
+ca = commit --amend
+# commit - amend the tip of the current branch, and do not edit the message.
+can = commit --amend --no-edit
+# commit interactive
+ci = commit --interactive
+# commit with a message
+cm = commit --message
+
+### diff ###
+# diff - show changes not yet staged
+dc = diff --cached
+# diff - changes about to be commited
+ds = diff --staged
+# diff - show changes but by word, not line
+dw = diff --word-diff
+
+### merge ###
+# merge but without autocommit, and with a commit even if the merge resolved as a fast-forward.
+me = merge --no-commit --no-ff
+
+### pull ###
+# pull if a merge can be resolved as a fast-forward, otherwise fail.
+pf = pull --ff-only
+
+### show-branch ###
+# show-branch - print a list of branches and their commits.
+sb = show-branch
+
+### status ###
+# status with short format instead of full details
+ss = status --short
+# status with short format and showing branch and tracking info.
+ssb = status --short --branch
+
+# Stash aliases
+save = stash save
+pop = stash pop
+
+# Do everything we can to synchronize all changes
+get = !git pull --rebase && git submodule update --init --recursive
+put = !git commit --all --message="$1" && git push
+
+# Do a push/pull for just one branch
+push1 = "!git push origin $(git branch-name)"
+pull1 = "!git pull origin $(git branch-name)"
+
+[format]
+pretty = "%H %ci %ce %ae %d %s"
