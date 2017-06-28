@@ -1,10 +1,10 @@
 require 'faker'
-# # Create myself
-User.create!(
-  name: 'example',
-  email: 'example@example.com',
-  password: 'password'
-)
+# # # Create myself
+# User.create!(
+#   name: 'example',
+#   email: 'example@example.com',
+#   password: 'password'
+# )
 # Create users
 25.times do
   User.create!(
@@ -31,7 +31,8 @@ end
   Item.create!(
   title: Faker::Hacker.say_something_smart,
   list_id: List.all.sample.id,
-  created_at: rand(10.minutes .. 1.year).ago
+  created_at: rand(10.minutes .. 1.year).ago,
+  completed: false
   )
 end
 
