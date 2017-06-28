@@ -1,6 +1,6 @@
 class Api::ListsController < ApiController
   before_action :authenticated?
-  before_action :set_user
+  before_action :set_user, except: [:index]
 
   def create
     @list = @user.lists.build(list_params)
