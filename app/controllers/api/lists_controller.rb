@@ -11,6 +11,11 @@ class Api::ListsController < ApiController
     end
   end
 
+  def index
+    @lists = List.all
+    render json: @lists, status: :ok
+  end
+
   def destroy
     begin
       list = List.find(params[:id])
