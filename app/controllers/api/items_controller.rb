@@ -13,7 +13,7 @@ class Api::ItemsController < ApiController
 
   def index
     @items = Item.all
-    json_response(@items)
+    render json: @items, status: :ok
   end
 
   private
