@@ -1,6 +1,6 @@
 class Api::ItemsController < ApiController
   before_action :authenticated?
-  before_action :set_list
+  before_action :set_list, only: [:create]
 
   def create
     @item = @list.items.build(item_params)
@@ -9,6 +9,11 @@ class Api::ItemsController < ApiController
     else
       render json: { errors: @item.errors.full_messages}, status: :unprocessable_entity
     end
+  end
+
+  def index
+    @items = Item.all
+    render json: @items, status: :ok
   end
 
   private

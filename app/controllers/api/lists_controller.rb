@@ -1,6 +1,6 @@
 class Api::ListsController < ApiController
   before_action :authenticated?
-  before_action :set_user
+  before_action :set_user, except: [:index]
 
   def create
     @list = @user.lists.build(list_params)
@@ -9,6 +9,11 @@ class Api::ListsController < ApiController
     else
       render json: { errors: @list.errors.full_messages}, status: :unprocessable_entity
     end
+  end
+
+  def index
+    @lists = List.all
+    render json: @lists, status: :ok
   end
 
   def destroy
